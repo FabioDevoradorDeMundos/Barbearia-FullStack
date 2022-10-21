@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Barbearia do Fabio</title>
+</head>
+<body>
+    <h1 class="hidden">Barbearia do Fabio</h1>
+
+    <div class="hidden">
+    <img src="img/CabeloBarbaClose.png" id="imgUm" onclick="location.href='http://localhost:3000';">
+    <img src="img/BarbaClose.png" class="imgDois" id="imgDois" onclick="location.href='http://localhost:3000';">
+    <img src="img/CabeloClose.png" class="imgTres" id="imgTres" onclick="location.href='http://localhost:3000';">
+    
+   
+</div>
+
+<div class="hidden">
+<label class="cb">Cabelo e Barba  R$ 35,00
+</label> 
+<label class="b">Barba R$ 20,00</label>
+<label class="c">Cabelo R$ 20,00 </label>
+</div>
+
+
+
+
+</body>
+</html>
+
+
+<script>
+    const hiddenEl = document.querySelectorAll('.hidden')
+
+const observer = new IntersectionObserver ((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+
+        }
+    })
+})
+
+hiddenEl.forEach((el) => observer.observe(el))
+
+
+const img1 = document.querySelector('#imgUm')
+const img2 = document.querySelector('#imgDois')
+const img3 = document.querySelector('#imgTres')
+
+
+function clickUm(e){
+    e.preventDefault()
+    
+
+}
+
+img1.addEventListener('click',clickUm)
+
+
+</script>
+ 
+
+</body>
+</html>
